@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRMSU College of Engineering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/LOGO.png" alt="Image"></a>
+            <i class="fa-solid fa-bars" onclick="showMenu()" id="hamburgerIcon"></i>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Instructions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faculty.html" target="_blank">Faculty</a></li>
+                            <li><a href="curricular.html">Curricular Offerings</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">More</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="history.html" target="_blank">History</a></li>
+                            <li><a href="research.html" target="_blank">Research</a></li>
+                            <li><a href="extensions.html" target="_blank">Extensions</a></li>
+                        </ul>
+                    </li>
+
+                    
+                </ul>
+            </div>
+            
+        </nav>
+
+    <div class="text-box">
+        <h1>College of Engineering</h1>
+        <p>Building your success.
+            Engineering your Future...
+        </p>
+        
+    </div>
+    </section>
+
+
+
+    <!------Course------->
+
+    <section class="course">
+        <h1>Courses we Offer</h1>
+        <p>Civil Engineering</p>
+        <p>Computer Engineering</p>
+        <p>Mechanical Engineering</p>
+        <p>Electrical Engineering</p>
+        <p>Mining Engineering</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Our Vision</h3>
+                <p>PRMSU as a premier learner center and proactive university in a digital and global society</p>
+            </div>
+            <div class="course-col">
+                <h3>Our Mission</h3>
+                <p>The President Ramon Magsaysay State University shall primarily provide advance and higher professional, technical, special instructions in various disciplines; undertake research, extension, and income generation programs for sustainable development of Zambales, the region, and the country. </p>
+            </div>
+            <div class="course-col">
+                <h3>Our Quality Policy</h3>
+                <p>The President Ramon Magsaysay State University is committed to continually strive for excellence in instruction, research, extension and production to strengthen global competitiveness adhering to quality standards for the utmost satisfaction of its valued customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities">
+        <div class="facilities">
+            <div class="facilities-col">
+                <img src="images/Fish-crusher.png" alt="Image">
+                <h3>BSME Department awards and demonstrates the Fish Crushing Machine to Laoag Kaunlaran Association</h3>
+                <p>The BSME Department awards and demonstrates the Fish Crushing Machine to Laoag Kaunlaran Association -Cooperative through the Regional Innovation Inclusive Cooperation Program between DTI, DOST, PRMSU and MSMED Council on the 14th of October 2022. This is a realization of the objectives of TEAM-UP EXTENSION PROGRAM parallel with the THRIVE agenda of the college with the goal, "A single step from COE, a hundred mouths fed in the community through upscaling and upgrading livelihood activities of small and medium enterprises in the Province of Zambales".</p>
+            </div>
+            <div class="facilities-col">
+                <img src="images/COE Orientation.png" alt="Image">
+                <h3>COE conducts Orientation and Gender Sensitivity Training</h3>
+                <p>The PRMSU College of Engineering conducted the 2nd Batch of Orientation and Gender and Development (GAD) / Gender Sensitivity Training (GST) Seminar for Freshmen at the Science and Engineering Laboratory Building (SELB) Annex on October 20, 2022 with speakers Engr. Rue Lei Balicaco and Engr. Cindy Dullas.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+ <!------Javascript for toggle menu------->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0"
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px"
+    }
+
+</script>
+
+<script>
+    // Hamburger Menu Toggle
+    document.querySelector('.hamburger-menu').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+</script>
+
+<footer id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: online.coe@prmsu.edu.ph | Phone: 0919 069 9177</p>
+    <p>&copy; 2024 PRMSU College of Engineering.</p>
+</footer>
+
+</body>
+</html>

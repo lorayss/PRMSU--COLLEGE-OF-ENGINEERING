@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Details</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+   <style>
+
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/PRMSU.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    position: sticky;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 100px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    border-right: 50px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    background-color: lightgray;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 50px;
+    list-style: none;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: none;
+}
+
+/* Dropdown Window */
+.dropdown-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 500px;
+    padding: 20px;
+    z-index: 100;
+}
+
+.dropdown-window h2 {
+    margin-top: 0;
+}
+
+.dropdown-window button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-window button:hover {
+    background-color: #e65c00;
+}
+
+.dropdown-menu li a::after {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+nav .fa-solid{
+    display: none;
+}
+
+
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        h2, h3{
+            font-family: 'Playfair Display', serif;
+            color: orangered;
+            text-align: center;
+        }
+
+        p, ul {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            ul li {
+                font-size: 1.1em;
+                margin: 5px 0;
+            }
+
+       /* Header Section */
+       header {
+            background-color: #014180;
+            color: white;
+            padding: 5px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        
+
+        /* Main Section */
+        main {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+
+            section h2, section h3 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+
+            section p, section ul li {
+                font-size: 1em;
+            }
+        .Dean img{
+            width: 30%;
+            border-radius: 10px;
+            text-align: left;
+            margin-left: 0;
+        }
+        .Dean p{
+            padding: 0%;
+            text-align: justify;
+            font-size: 0.8em;
+        }
+        .Dean h4{
+            margin-top: 16px;
+             margin-bottom: 15px;
+             color: black;
+            font-size: 1.3em;
+        }
+
+        .program-chairpersons img{
+            width: 30%;
+            border-radius: 10px;
+            text-align: left;
+            margin-left: 0;
+        }
+        .program-chairpersons p{
+            padding: 0%;
+            text-align: justify;
+            font-size: 0.8em;
+        }
+        .program-chairpersons h3{
+        margin-top: 16px;
+        margin-bottom: 15px;
+        color: orangered;
+        font-size: 1.3em;
+        
+    }
+        .program-chairpersons h4{
+             margin-top: 16px;
+             margin-bottom: 15px;
+             color: black;
+            font-size: 1.3em;
+        
+    }
+        
+
+        /* Footer Section */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+            footer p {
+                font-size: 0.9em;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <a href="index.html"><img src="images/LOGO.png" alt="Image"></a>
+           
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Instructions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faculty.html" target="_blank">Faculty</a></li>
+                            <li><a href="curricular.html">Curricular Offerings</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">More</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="history.html" target="_blank">History</a></li>
+                            <li><a href="research.html" target="_blank">Research</a></li>
+                            <li><a href="extensions.html" target="_blank">Extensions</a></li>
+                        </ul>
+                    </li>
+
+                    
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()" id="hamburgerIcon"></i>
+        </nav>
+    </header>
+
+    <main>
+        <section id="college-dean">
+            <div class="Dean">
+                <img src="images/dean.jpg" alt="Image">
+            <h2>College Dean</h2>
+            <h4><strong>GILBERT D. DEBOMA, REE, M.Eng.</strong></h4>
+            <p>Engr Gilbert D. Deboma is a faculty of the College of Engineering for 24 years with an Academic Rank of Associate Professor V. He is a graduate of Bachelor of Science in Electrical Engineering at Technological Institute of the Philippines – Quezon City. He finished his Master of Science in Electronics Engineering at Andong National University – South Korea. He is currently taking up PhD in Agricultural Engineering at Central Luzon State University. Engr Deboma is an active member of the Institute of Integrated Electrical Engineers, Inc., the accredited professional organization of electrical practitioners of the Philippines.  He is the current dean of the College of Engineering and concurrent Program Chairperson of the Electrical Engineering Department.</p>
+        </div>
+        </section>
+
+        <section class ="program-chairpersons">
+            <div class="program-chairpersons"></div>
+            <h2>Program Chairpersons</h2>
+                <img src="images/PROG CE.jpg" alt="Image">
+                <h3>BS Civil Engineering (BSCE)</h3>
+                <h4>FERDINAND D. TABLIGAN, RCE, M.Eng.</h4>
+                <p>Contents to be published soon...</p>
+            </div>
+            <div class="program-chairpersons"></div>
+                <img src="images/PROG CPE.jpg" alt="Image">
+                <h3>BS Computer Engineering (BSCpE)</h3>
+                <h4>MELOJEAN C. MARAVE, LPT, MSIT</h4>
+                <p>Engr. Melojean C. Marave has an extensive educational background, including a Doctorate in Information Technology from the Technological Institute of the Philippines and a Doctor of Education Major in Educational Management from Ramon Magsaysay Technological University, Iba Campus. She holds a Master of Science in Information Technology from the Polytechnic University of the Philippines – Sta. Mesa, Manila. Additionally, she completed a Post-Baccalaureate Certificate in Professional Education at Ramon Magsaysay Technological University Main Campus Iba, Zambales, and a Trade Course in IT Course Design and Development from the National Computer Center, National Computer Institute, Diliman Q.C. Engr. Marave finished CISCO Certified Network Associate Exploration 1, 2, 3, and 4 modules from UP Information Technology Training Center, UP Diliman Q.C. She earned her Bachelor of Science in Computer Engineering in October 2001. Engr. Marave currently serves as the BS Computer Engineering Program Chairperson at PRMSU Iba, Zambales, and has been actively involved in various faculty and extension roles within the university, with a special highlight on community extension. She is a licensed professional teacher and holds professional memberships with Colleges and Universities in the Philippines and the Institute of Computer Engineers of the Philippines as a Professional Member. An Accreditor of the Accrediting Agency of Chartered Colleges and Universities in the Philippines (AACCUP) and Internal Auditor of the International Standard Organization (ISO). Additionally, she has contributed significantly to youth leadership programs and has received recognition for her outstanding contributions and leadership. </p>
+            </div>
+            <div class="program-chairpersons"></div>
+                <img src="images/dean.jpg" alt="Image">
+                <h3>BS Electrical Engineering (BSEE)</h3>
+                <h4>GILBERT D. DEBOMA, REE, M.Eng.</h4>
+                <p>Engr Gilbert D. Deboma is a faculty of the College of Engineering for 24 years with an Academic Rank of Associate Professor V. He is a graduate of Bachelor of Science in Electrical Engineering at Technological Institute of the Philippines – Quezon City. He finished his Master of Science in Electronics Engineering at Andong National University – South Korea. He is currently taking up PhD in Agricultural Engineering at Central Luzon State University. Engr Deboma is an active member of the Institute of Integrated Electrical Engineers, Inc., the accredited professional organization of electrical practitioners of the Philippines.  He is the current dean of the College of Engineering and concurrent Program Chairperson of the Electrical Engineering Department.</p>
+            </div>
+            <div class="program-chairpersons"></div>
+                <img src="images/ME.jpg" alt="Image">
+                <h3>BS Mechanical Engineering (BSME)</h3>
+                <h4>MARLON JAMES A. DEDICATORIA, RMEE, Ph.D.</h4>
+                <p>Dr. Marlon James A. Dedicatoria is a licensed mechanical engineer and currently serves as the Vice President for Research and Development, as well as the Chairperson of the Mechanical Engineering Program at President Ramon Magsaysay State University (PRMSU) in Iba, Zambales. With over ten years of teaching experience, he has been instructing professional courses within the Bachelor of Science in Mechanical Engineering (BSME) program at PRMSU's College of Engineering. Additionally, he holds a lecturing position at the university's graduate school, where he teaches mathematics courses.
+                    Dr. Dedicatoria earned his Bachelor of Science degree in Mechanical Engineering from Ramon Magsaysay Technological University in 2006. Subsequently, he pursued his Master of Science in Mechanical Design and Systems Engineering at Andong National University, South Korea, graduating in 2010. He furthered his academic pursuits by completing his PhD in Mechanical Design and Systems Engineering from Andong National University in 2013. Following his doctoral studies, he served as a post-doctoral fellow at the same university's Materials Behavior Evaluation Laboratory under the guidance of Prof. Hyung-Seop Shin from 2013 to 2014.
+                    His research publications primarily focus on the electromechanical property evaluation of high-temperature superconductors. Presently, Dr. Dedicatoria holds the position of Professor 3 at PRMSU.</p>
+            </div>
+            <div class="program-chairpersons"></div>
+                <img src="images/EM.jpg" alt="Image">
+                <h3>BS Mining Engineering (BSEM)</h3>
+                <h4>DOROTHY JOYCE SOLPICO DESIERTO</h4>
+                <p>Contents to be published soon...</p>
+            </div>
+            </div>
+        </section>
+
+        <section id="faculty-members">
+            <h2>Faculty Members</h2>
+
+            <h3>Civil Engineering</h3>
+            <ul>
+                <li>Engr. RONEL E. ROMERO</li>
+                <li>Engr. JEMAR DALUSONG</li>
+                <li>Engr. RAYMOND ARAMAY</li>
+                <li>Engr. ABRAHAM ANTONIO</li>
+                <li>Engr. MA. THEREZA VICHO</li>
+                <li>Engr. VICTOR D. VICHO</li>
+                <li>Engr. ELENA LYN TOMBALE</li>
+                <li>Engr. RYV ANTHONY BISQUERA</li>
+                <li>Engr. JOVEN MANANGAN</li>
+                <li>Engr. ELOISA ROMULO</li>
+                <li>Engr. MARKO ANTONIO FERNANDEZ</li>
+                <li>Engr. ZENDREE ARAMAY</li>
+            </ul>
+
+            <h3>Computer Engineering</h3>
+            <ul>
+                <li>Engr. RICKY S. BARRERA</li>
+                <li>Engr. BRYAN CARLOS B. ACAIN</li>
+                <li>Engr. OLIVER A. SABADO, JR.</li>
+                <li>Engr. DIONISIO M. MARTIN, JR.</li>
+                <li>Engr. FROILAN G. CANTILLO</li>
+                <li>Engr. ALLAN JAY L. MORILLO</li>
+                <li>Engr. DENNIZE JIANA R. BASILIO</li>
+                <li>Engr. KIRK LEE P. LEOMO</li>
+                <li>Engr. MARTEEN BERAVON REMOLACIO</li>
+            </ul>
+
+            <h3>Electrical Engineering</h3>
+            <ul>
+                <li>Engr. MARK LESTER PARALLAG</li>
+                <li>Engr. DORIS H. MARQUEZ</li>
+                <li>Engr. SENATO ORIANZA</li>
+                <li>Engr. CHRISTIAN MARAFINA</li>
+                <li>Engr. FERNAN EDARAD</li>
+                <li>Engr. RUE LEI BALICACO</li>
+            </ul>
+
+            <h3>Mechanical Engineering</h3>
+            <ul>
+                <li>Engr. MA. KARLA JESSICA BAUTISTA</li>
+                <li>Engr. JASPER ANTHONY CUEVAS</li>
+                <li>Engr. MICHAEL ROMUALDO</li>
+                <li>Engr. NHOELLE PADUA</li>
+            </ul>
+
+            <h3>Allied and General Education</h3>
+            <ul>
+                <li>Engr. MELISSA M. EBUE</li>
+                <li>Engr. CLARISSE HOPE M. RICO</li>
+                <li>Dr. EMELYN E. BUGAYONG</li>
+                <li>Engr. CINDY DULLAS</li>
+                <li>Dr. EDNA PUNZALAN</li>
+                <li>Ms. JANE D. DANILA</li>
+                <li>Mr. LUCIANO MEDRANO</li>
+                <li>Ms. APRIL BESA</li>
+                <li>Ms. SANTOS, MADELLE</li>
+                <li>Ms. MONICA PARANGAT</li>
+                <li>Ms. KAREN QUITORIANO</li>
+                <li>Ms. JIO ERIKA PELINIO</li>
+                <li>Ms. MAE JOYCE VELARDE</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PRMSU College of Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>
